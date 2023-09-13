@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Rubik:wght@400;900&family=Source+Sans+3:wght@300;400&display=swap');
+/* Width of the scrollbar (if supported) */
 
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+}
+html {
+	max-height: 100vh; /* Set maximum height equal to viewport height */
+	overflow-y: clip; /* Add a vertical scrollbar when content overflows */
 }
 
 h1 {
