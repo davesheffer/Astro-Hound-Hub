@@ -1,0 +1,130 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Main from '../components/Main.astro';
+import sendGrid from '@sendgrid/mail';
+import { Image } from 'astro:assets';
+import '../styles/global.css';
+import contactImage from '../assets/sammy.png';
+sendGrid.setApiKey(import.meta.env.PUBLIC_SENDGRID_API_KEY);
+
+interface MessageData {
+	to: string;
+	from: string;
+	replyTo: { email: string; name: string };
+	subject: string;
+	text: string;
+}
+if (Astro.request.method === 'POST') {
+	try {
+		// Getting posted data from our contact form
+		const data = await Astro.request.formData();
+		const name = data.get('name');
+		const email = data.get('email');
+		const message = data.get('message');
+
+		// TODO: Do not forget to do validation and error handling over received data from your contact form.
+
+		// Sending email
+		const msg = {
+			to: 'dave.sheffer1@gmail.com', // Change to your recipient
+			from: 'dave.sheffer1@gmail.com', // Change to your verified sender
+			replyTo: { email: email, name: name },
+			subject: `Contact form submission from ${name}`,
+			text: message + ' | Sent from: ' + email,
+		};
+
+		await sendGrid
+			.send(msg as MessageData)
+			.then(() => {
+				console.log('Email sent');
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+	} catch (error) {
+		console.error(error);
+	}
+}
+---
+
+<Layout title='The Main Event About'>
+	<Main>
+		<div class='grid grid-cols-1 md:grid-cols-2 place-items-center gap-x-10'>
+			<div class='flex flex-col w-full'>
+				<h2 transition:animate='slide' class='text-center md:text-left'>
+					Contact US
+				</h2>
+				<form
+					method='POST'
+					class='bg-white shadow-lg rounded-xl px-8 pt-6 pb-8 my-4 border border-gray-400'
+				>
+					<div class='mb-4'>
+						<label
+							class='block text-gray-700 text-sm font-bold mb-2'
+							for='name'
+						>
+							Name:</label
+						>
+						<input
+							type='text'
+							name='name'
+							placeholder='Name'
+							class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md transition-all'
+						/>
+					</div>
+					<div class='mb-4'>
+						<label
+							class='block text-gray-700 text-sm font-bold mb-2'
+							for='email'
+						>
+							Email:</label
+						>
+						<input
+							type='email'
+							name='email'
+							placeholder='Email'
+							class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md transition-all'
+						/>
+					</div>
+					<div class='mb-4'>
+						<label
+							class='block text-gray-700 text-sm font-bold mb-2'
+							for='email'
+						>
+							Message:</label
+						>
+						<textarea
+							name='message'
+							placeholder='Message'
+							class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md transition-all'
+						></textarea>
+					</div>
+					<div>
+						<button
+							class='text-white font-bold py-2 px-4 rounded w-full focus:outline-none hover:shadow-md'
+							type='submit'>Send</button
+						>
+					</div>
+				</form>
+			</div>
+
+			<div>
+				<Image
+					src={contactImage}
+					height={500}
+					width={500}
+					alt='cyber-dog'
+					class='w-[270px] mb-6'
+					transition:animate='slide'
+				/>
+				<p class='pr-4'>
+					Your thoughts and ideas drive our blog, and your feedback is
+					invaluable. So don't be shy! Reach out to us through the form below or
+					using the contact details provided, and let's embark on this pawsome
+					journey together. Hound Hub is your hub for all things canine, and we
+					can't wait to connect with you!
+				</p>
+			</div>
+		</div>
+	</Main>
+</Layout>

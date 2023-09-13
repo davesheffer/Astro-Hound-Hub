@@ -1,0 +1,37 @@
+---
+import Header from '../components/Header.jsx';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import { Image } from 'astro:assets';
+import logoImage from '../assets/dog.png';
+import closeButton from '../assets/close.svg';
+import menuButton from '../assets/burger.svg';
+import { ViewTransitions } from 'astro:transitions';
+interface Props {
+	title: string;
+}
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions />
+	</head>
+
+	<body class="min-h-screen grid grid-rows-[auto,1fr,auto] relative overflow-x-auto md:overflow-x-auto">
+		<Header client:load>
+			<Image src={logoImage} alt="A starry night sky." format="webp" />
+			<Image src={closeButton} alt="A starry night sky." format="webp" />
+			<Image src={menuButton} alt="A starry night sky." format="webp" />
+		</Header>
+		<slot />
+		<Footer />
+	</body>
+</html>

@@ -1,0 +1,35 @@
+---
+export const prerender = true;
+import Layout from '../layouts/Layout.astro';
+import Main from '../components/Main.astro';
+import { Image } from 'astro:assets';
+import aboutImage from '../assets/sammy.png';
+---
+
+<Layout title='The Main Event About'>
+	<Main>
+		<Image
+			src={aboutImage}
+			alt='cyber-dog'
+			class='float-left w-[275px] md:w-[450px]'
+			transition:animate='slide'
+		/>
+		<h2 transition:animate='slide'>About The Hub</h2>
+		<p class='text-justify'>
+			At Hound Hub, we're passionate about all things canine. We're not just a
+			blog; we're a community of dog lovers, dedicated to celebrating the
+			extraordinary bond between humans and their furry companions. Whether
+			you're a seasoned pet owner, a new puppy parent, or simply a dog
+			enthusiast, our mission is to provide you with a wealth of information,
+			inspiration, and heartwarming stories about our four-legged friends.
+		</p>
+		<h2 transition:animate='slide'>Our Story</h2>
+		<p>
+			Hound Hub was born out of a deep love for dogs and a desire to share that
+			love with the world. Our journey began when a group of dog aficionados
+			came together, each with their unique experiences, from professional
+			trainers to rescue advocates. What unites us is our unwavering devotion to
+			our canine companions.
+		</p>
+	</Main>
+</Layout>

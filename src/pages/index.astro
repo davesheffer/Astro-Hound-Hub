@@ -1,0 +1,46 @@
+---
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+import Main from '../components/Main.astro';
+import { Image } from 'astro:assets';
+import indexImage from '../assets/man-dog.png';
+import girldog from '../assets/girl-dog.png';
+import '../styles/global.css';
+---
+
+<Layout title='Home | Hound Hub'>
+	<Main>
+		<Image
+			src={indexImage}
+			alt='Hero Image'
+			format='webp'
+			class='float-left w-[200px] md:w-[300px]'
+			transition:animate='slide'
+		/>
+		<h2 transition:animate='slide'>Welcome To Hound Hub</h2>
+		<p>
+			Discover a World of Wagging Tails, Furry Adventures, and Canine
+			Connection. Welcome to the Canine Corner, your go-to destination for all
+			things dog-related. From heartwarming stories and training tips to the
+			latest trends in pet care, we're here to celebrate the incredible bond
+			between humans and their four-legged companions.
+		</p>
+		<p class='mt-10'>
+			Join us on this paw-some journey as we explore the enchanting world of
+			dogs and share tales of unconditional love, laughter, and furry
+			adventures. Get ready to be inspired, informed, and immersed in the
+			wonderful world of dogs. It's a dog's life, and we're here to celebrate
+			every tail-wagging moment with you!"
+		</p>
+		<Image
+			src={girldog}
+			alt='Hero Image'
+			height={300}
+			width={300}
+			format='webp'
+			class='float-right -md:translate-y-2/3 w-[200px] md:w-[300px]'
+			transition:animate='slide'
+		/>
+	</Main>
+</Layout>

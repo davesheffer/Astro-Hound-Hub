@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Main from '../../components/Main.astro';
+
+import { getCollection } from 'astro:content';
+
+import Posts from '../../components/Posts.astro';
+const posts = await getCollection('posts');
+---
+
+<Layout title='Blog | Hound Hub' transition:persist>
+	<Main>
+		<h2>Hound Blog</h2>
+		<p class='max-w-[100ch] mb-4'>
+			Discover the latest trends, highlights, and insider insights into the
+			world's most exciting events.
+		</p>
+		<Posts posts={posts} />
+	</Main>
+</Layout>

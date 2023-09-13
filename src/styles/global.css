@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Rubik:wght@400;900&family=Source+Sans+3:wght@300;400&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 1.8rem !important;
+	font-family: 'Playfair Display', serif;
+}
+
+h2 {
+	font-family: 'Playfair Display', serif;
+	font-size: 3rem !important;
+	margin-bottom: 1.1rem !important;
+}
+
+h3 {
+	font-family: 'Playfair Display', serif;
+	font-size: 1.8rem !important;
+}
+
+p {
+	font-family: 'Source Sans 3', sans-serif;
+	font-weight: 300;
+	font-size: 1.2rem;
+}
+
+ul {
+	font-family: 'Source Sans 3', sans-serif;
+	font-weight: 300;
+}
+
+ul li:hover {
+	color: coral;
+}
+a {
+	font-size: 1.2rem;
+}
+footer {
+	background: #83bcc5;
+}
+button {
+	background-color: #83bcc5 !important;
+	transition: ease-in-out 0.3s;
+}
+button:hover {
+	background-color: #bae7ee !important;
+	color: #807e7e;
+}
+ul.active {
+	transform: translateX(0) !important;
+}
