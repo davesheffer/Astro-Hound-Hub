@@ -1,7 +1,7 @@
-# Astro Starter Kit: Basics
+# Astro Hound Hub Blog
 
 ```
-npm create astro@latest -- --template basics
+(https://astro-hound-hub.vercel.app/)
 ```
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
