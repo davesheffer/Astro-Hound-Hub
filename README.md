@@ -12,7 +12,7 @@
 - View Transitions API: Implements a custom View Transitions API for seamless and fluid transitions between views.
 - CSS Styling with Tailwind: Utilizes Tailwind CSS to deliver a customizable and responsive design
 - Rich Blog Content: articles on space and canine topics.
-- Contact Page: SendGrid integration with Vercel CloudFunctios.
+- Contact Page: SendGrid integration with Vercel Cloud Functions.
 
 # Backlog:
 - **User Authentication** / Firebase
