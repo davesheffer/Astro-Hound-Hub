@@ -6,7 +6,7 @@
 
 # Key Features:
 
-- Astro-Powered: SSR and SSG rendering with Astro
+- Astro-Powered: SSR and SSG rendering
 - Optimized Images: Astro image optimization for fast loading and reduced bandwidth usage.
 - Dynamic Header: React component client-side interaction.
 - View Transitions API: Implements a custom View Transitions API for seamless and fluid transitions between views.
