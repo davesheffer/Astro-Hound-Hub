@@ -7,11 +7,12 @@
 # Key Features:
 
 - Astro-Powered: SSR and SSG rendering
+- Astro Content: Post Collection MD file Content Structure with articles on space and canine topics.
 - Optimized Images: Astro image optimization for fast loading and reduced bandwidth usage.
 - Dynamic Header: React component client-side interaction.
 - View Transitions API: Implements a custom View Transitions API for seamless and fluid transitions between views.
 - CSS Styling with Tailwind: Utilizes Tailwind CSS to deliver a customizable and responsive design
-- Rich Blog Content: articles on space and canine topics.
+
 - Contact Page: SendGrid integration with Vercel Cloud Functions.
 
 # Backlog:
