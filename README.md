@@ -1,7 +1,7 @@
 # Astro Hound Hub Blog
 
 ```
-(https://astro-hound-hub.vercel.app/)
+https://astro-hound-hub.vercel.app/
 ```
 
 # Key Features:

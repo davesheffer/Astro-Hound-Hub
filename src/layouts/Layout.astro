@@ -7,6 +7,19 @@ import logoImage from '../assets/dog.png';
 import closeButton from '../assets/close.svg';
 import menuButton from '../assets/burger.svg';
 import { ViewTransitions } from 'astro:transitions';
+import { app } from '../firebase/server';
+import { getAuth } from 'firebase-admin/auth';
+import type { User } from 'firebase/auth';
+const auth = getAuth(app);
+
+/* Check current session */
+if (!Astro.cookies.has('session')) {
+	return Astro.redirect('/signin');
+}
+const sessionCookie = Astro.cookies.get('session').value;
+const decodedCookie = await auth.verifySessionCookie(sessionCookie);
+const userVerified = await auth.getUser(decodedCookie.uid);
+
 interface Props {
 	title: string;
 }
@@ -14,22 +27,24 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang='en'>
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		<meta charset='UTF-8' />
+		<meta name='description' content='Astro description' />
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='generator' content={Astro.generator} />
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
 
-	<body class="min-h-screen grid grid-rows-[auto,1fr,auto] relative overflow-x-auto md:overflow-x-auto">
+	<body
+		class='min-h-screen grid grid-rows-[auto,1fr,auto] relative overflow-x-auto md:overflow-x-auto'
+	>
 		<Header client:load>
-			<Image src={logoImage} alt="A starry night sky." format="webp" />
-			<Image src={closeButton} alt="A starry night sky." format="webp" />
-			<Image src={menuButton} alt="A starry night sky." format="webp" />
+			<Image src={logoImage} alt='A starry night sky.' format='webp' />
+			<Image src={closeButton} alt='A starry night sky.' format='webp' />
+			<Image src={menuButton} alt='A starry night sky.' format='webp' />
 		</Header>
 		<slot />
 		<Footer />

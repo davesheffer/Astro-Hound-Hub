@@ -5,11 +5,16 @@ type Props = {
 	post: CollectionEntry<'posts'>;
 };
 const { post } = Astro.props;
-console.log(post);
 ---
 
-<article class="pt-10 w-full">
-	<Image src={post.data.image} alt={post.data.title} format="webp" class="rounded-md shadow-md w-full" transition:name=`image-${post.slug}` />
+<article class='pt-10 w-full'>
+	<Image
+		src={post.data.image}
+		alt={post.data.title}
+		format='webp'
+		class='rounded-md shadow-md w-full'
+		transition:name=`image-${post.slug}`
+	/>
 	<a href={`/blog/${post.slug}`}>
 		<h2>{post.data.title}</h2>
 	</a>
