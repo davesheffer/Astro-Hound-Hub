@@ -1,6 +1,5 @@
 import type { ServiceAccount } from "firebase-admin";
 import { initializeApp, cert } from "firebase-admin/app";
-import { getAuth } from "firebase-admin/auth";
 import { getFirestore } from "firebase-admin/firestore";
 
 const serviceAccount = {
@@ -19,7 +18,6 @@ const serviceAccount = {
 
  export const app = initializeApp({
   credential: cert(serviceAccount as ServiceAccount),
-}, 'raped');
+},'hound-hub-server');
 
-export const auth = getAuth(app);
 export const firestore = getFirestore(app);
