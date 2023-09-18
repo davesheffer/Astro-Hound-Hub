@@ -58,7 +58,7 @@ export default function Header(props) {
 				</ul>
 				<div className="user-login">
 					{props.user ? (
-						<a href="/profile" className="flex items-center">
+						<a href="/dashboard" className="flex items-center">
 							<img src={props.user.photoURL} alt="" className="rounded-full h-10 w-10" />
 							<p className="ml-2">{props.user.displayName}</p>
 						</a>

@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCUl14lTH6k0n_u6-CG-mvay9DUkoiW2Yc",
+  apiKey: import.meta.env.FIREBASE_CLIENT_API_KEY,
   authDomain: "hound-hub.firebaseapp.com",
   projectId: "hound-hub",
   storageBucket: "hound-hub.appspot.com",
   messagingSenderId: "",
-  appId: "1:846272140953:web:2157fe8e67498d351f8a08"
+  appId: import.meta.env.FIREBASE_CLIENT_APP_ID,
 };
 
 export const app = initializeApp(firebaseConfig, 'rapid');
