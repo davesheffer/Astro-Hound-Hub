@@ -11,10 +11,14 @@ import { app } from '../firebase/server';
 import { getAuth } from 'firebase-admin/auth';
 
 const auth = getAuth(app);
-
-const sessionCookie = Astro.cookies.get('session')?.value;
-const decodedCookie = await auth.verifySessionCookie(sessionCookie);
-const user = await auth.getUser(decodedCookie.uid);
+let user = null;
+if (Astro.cookies.get('session')?.value) {
+	const sessionCookie = Astro.cookies.get('session').value;
+	const decodedCookie = await auth.verifySessionCookie(sessionCookie);
+	user = await auth.getUser(decodedCookie.uid);
+} else {
+	user = null;
+}
 
 interface Props {
 	title: string;

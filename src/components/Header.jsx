@@ -4,7 +4,7 @@ import closeButton from '../assets/close.svg';
 import menuButton from '../assets/burger.svg';
 
 export default function Header(props) {
-	console.log(props);
+	console.log(props.user);
 	function handleClick() {
 		const nav = document.getElementById('nav');
 		const burger = document.getElementById('burger');
@@ -56,6 +56,18 @@ export default function Header(props) {
 						<a href="/contact">Contact</a>
 					</li>
 				</ul>
+				<div className="user-login">
+					{props.user ? (
+						<a href="/profile" className="flex items-center">
+							<img src={props.user.photoURL} alt="" className="rounded-full h-10 w-10" />
+							<p className="ml-2">{props.user.displayName}</p>
+						</a>
+					) : (
+						<a href="/signin" className="flex items-center">
+							<p className="ml-2">Login</p>
+						</a>
+					)}
+				</div>
 				<img src={menuButton.src} width="40" alt="" className="md:hidden" id="burger" onClick={handleClick} />
 			</div>
 		</header>
