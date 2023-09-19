@@ -12,11 +12,11 @@ https://astro-hound-hub.vercel.app/
 - Dynamic Header: React component client-side interaction.
 - View Transitions API: Implements a custom View Transitions API for seamless and fluid transitions between views.
 - CSS Styling with Tailwind: Utilizes Tailwind CSS to deliver a customizable and responsive design
-
+- User Authentication - Firebase Credentials and Google Provider
 - Contact Page: SendGrid integration with Vercel Cloud Functions.
 
 # Backlog:
-- **User Authentication** / Firebase
+
 - **User Profiles:**
 Allow users to create and manage their profiles. They can upload a profile picture, set preferences, and customize their experience on your blog.
 - **Commenting System:** 
