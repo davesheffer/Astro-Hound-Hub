@@ -6,9 +6,11 @@
 	margin: 0;
 	padding: 0;
 }
+
 html {
-	max-height: 100vh; /* Set maximum height equal to viewport height */
-	overflow-y: clip; /* Add a vertical scrollbar when content overflows */
+	max-height: 100vh;
+	/* Set maximum height equal to viewport height */
+	/* Add a vertical scrollbar when content overflows */
 }
 
 h1 {
@@ -41,20 +43,25 @@ ul {
 ul li:hover {
 	color: coral;
 }
+
 a {
 	font-size: 1.2rem;
 }
+
 footer {
 	background: #83bcc5;
 }
+
 button {
 	background-color: #83bcc5 !important;
 	transition: ease-in-out 0.3s;
 }
+
 button:hover {
 	background-color: #bae7ee !important;
 	color: #807e7e;
 }
+
 ul.active {
 	transform: translateX(0) !important;
 }
@@ -65,6 +72,7 @@ ul.active {
 	font-weight: 300;
 	margin-right: 10px;
 }
+
 #signin-form input {
 	font-size: 1.2rem;
 	font-family: 'Source Sans 3', sans-serif;
@@ -72,9 +80,11 @@ ul.active {
 	border: #807e7e 1px solid;
 	border-radius: 5px;
 }
+
 #signin-form label:nth-child(3) {
 	margin-left: 10px;
 }
+
 #signin-form button {
 	font-size: 1.2rem;
 	font-family: 'Source Sans 3', sans-serif;
@@ -84,6 +94,7 @@ ul.active {
 	padding: 3px 10px;
 	margin-left: 20px;
 }
+
 #google {
 	font-size: 1.4rem;
 	font-family: 'Source Sans 3', sans-serif;
@@ -93,6 +104,7 @@ ul.active {
 	padding: 3px 10px;
 	margin-top: 10px;
 }
+
 #signout-btn {
 	font-size: 1.2rem;
 	font-family: 'Source Sans 3', sans-serif;
